@@ -71,11 +71,24 @@
     border-top: 1px solid #ddd;
     margin: 40px 0;
   }
+  .last-updated {
+    font-size: 13px;
+    color: #888;
+    margin: -24px 0 32px;
+  }
 </style>
 </head>
 <body>
 
 <h1>外部LP制作 ご依頼にあたってのルール</h1>
+<p class="last-updated">最終更新日：<span id="last-updated-date"></span></p>
+<script>
+  (function () {
+    var d = new Date(document.lastModified);
+    var text = d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日';
+    document.getElementById('last-updated-date').textContent = text;
+  })();
+</script>
 
 <h2>編集範囲について</h2>
 <p>HTMLファイル内に以下のコメントを記載しています。<strong>この範囲内のみ</strong>を編集・追記してください。</p>
