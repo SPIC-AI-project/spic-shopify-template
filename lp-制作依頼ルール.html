@@ -101,6 +101,17 @@
 
 <hr>
 
+<h2>ページURLについて</h2>
+<p>Shopifyの仕様上、<strong>階層URL（入れ子構造のパス）は作成できません。</strong></p>
+<pre><span class="label-ng">/* NG */</span>
+/lp/vitamin-c/campaign
+
+<span class="label-ok">/* OK */</span>
+/pages/vitamin-c-lp</pre>
+<p>ページのURLは1階層のスラッグのみで管理されます。ファイル命名規則で使用する <code>lpname</code> は、このURLスラッグを参考に設定してください。</p>
+
+<hr>
+
 <h2>CSS記述ルール（重要）</h2>
 <p>弊社サイトのCSSと干渉しないよう、以下を必ず守ってください。</p>
 
