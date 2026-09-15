@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外部LP制作 ご依頼にあたってのルール</title>
+<style>
+  body {
+    font-family: "Hiragino Sans", "Meiryo", sans-serif;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 24px;
+    color: #333;
+    line-height: 1.8;
+  }
+  h1 {
+    font-size: 22px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 12px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 17px;
+    margin-top: 48px;
+    padding: 8px 14px;
+    background: #f4f4f4;
+    border-left: 4px solid #555;
+  }
+  p, li {
+    font-size: 15px;
+  }
+  ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 6px;
+  }
+  strong {
+    color: #111;
+  }
+  .rule {
+    margin: 20px 0;
+  }
+  .rule-title {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+  pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 16px 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .label-ng { color: #e06c75; }
+  .label-ok { color: #98c379; }
+  .note {
+    background: #fff8e1;
+    border-left: 4px solid #f0c040;
+    padding: 10px 16px;
+    margin: 16px 0;
+    font-size: 14px;
+  }
+  .deliverables li {
+    padding: 4px 0;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 40px 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>外部LP制作 ご依頼にあたってのルール</h1>
+
+<h2>編集範囲について</h2>
+<p>HTMLファイル内に以下のコメントを記載しています。<strong>この範囲内のみ</strong>を編集・追記してください。</p>
+<pre>&lt;!-- ▼▼▼ LP記述ここから ▼▼▼ --&gt;
+
+（ここにLP用のHTML・CSS・JSを記述してください）
+
+&lt;!-- ▲▲▲ LP記述ここまで ▲▲▲ --&gt;</pre>
+<div class="note">範囲外のヘッダー・フッター・既存CSSは弊社サイトの共通パーツです。<strong>絶対に編集しないでください。</strong></div>
+
+<hr>
+
+<h2>CSS記述ルール（重要）</h2>
+<p>弊社サイトのCSSと干渉しないよう、以下を必ず守ってください。</p>
+
+<div class="rule">
+  <div class="rule-title">① すべてのスタイルを <code>#dummy-lp-area</code> 配下でスコープすること</div>
+  <pre><span class="label-ng">/* NG */</span>
+h2 { font-size: 24px; }
+
+<span class="label-ok">/* OK */</span>
+#dummy-lp-area h2 { font-size: 24px; }</pre>
+</div>
+
+<div class="rule">
+  <div class="rule-title">② 要素セレクタへの直接指定禁止</div>
+  <p><code>body</code> <code>a</code> <code>p</code> <code>h1</code>〜<code>h6</code> <code>img</code> など、タグ名への直接スタイル指定は禁止です。</p>
+</div>
+
+<div class="rule">
+  <div class="rule-title">③ <code>!important</code> の多用禁止</div>
+  <p>どうしても必要な場合のみ、理由をコメントで明記してください。</p>
+</div>
+
+<hr>
+
+<h2>JS記述ルール</h2>
+<ul>
+  <li>jQueryはすでに読み込み済みです。重複して読み込まないでください。</li>
+  <li>JSはページ下部（LP範囲内）にまとめて記述してください。</li>
+  <li>グローバル変数・既存関数の上書きは禁止です。</li>
+</ul>
+
+<hr>
+
+<h2>画像について</h2>
+<ul>
+  <li>画像ファイルはすべて、納品物の <code>img</code> フォルダ内に格納してください。</li>
+  <li>HTMLからの参照は <code>img/ファイル名.webp</code> の形式で記述してください。<br>（弊社にてShopify登録後、URLを差し替えます）</li>
+</ul>
+
+<div class="rule">
+  <div class="rule-title">ファイル命名規則</div>
+  <pre>&lt;公開時西暦&gt;&lt;LP識別子&gt;-lp-xxx.webp</pre>
+  <p>例：ビタミンCのLPなら <code>2026vitc-lp-01.webp</code>、<code>2026vitc-lp-02.webp</code> …</p>
+  <p>LP識別子は、そのLPのページURLに合わせて設定してください。（例：URLが <code>vitamin-c-lp</code> なら <code>2026vitc-lp-01.webp</code> など）</p>
+  <p>PC/SPで画像を出し分ける場合は、末尾に <code>-pc</code> <code>-sp</code> を付与してください。</p>
+  <pre>例：2026vitc-lp-01-pc.webp
+    2026vitc-lp-01-sp.webp</pre>
+</div>
+
+<div class="rule">
+  <div class="rule-title">使用可能な文字</div>
+  <p>ファイル名は<strong>半角英数字・ハイフン（<code>-</code>）・アンダースコア（<code>_</code>）</strong>のみで構成してください。</p>
+  <p>全角文字・半角スペース・<code>@</code> <code>#</code> <code>!</code> <code>%</code> などの記号は使用しないでください。</p>
+  <pre><span class="label-ng">/* NG */</span>
+2026 vitc lp 01@2x.jpeg
+画像 (1).png
+
+<span class="label-ok">/* OK */</span>
+2026vitc-lp-01.webp
+2026vitc-lp-01_pc.webp</pre>
+</div>
+
+<div class="rule">
+  <div class="rule-title">英字の大文字・連番の表記</div>
+  <p>英字は<strong>すべて半角小文字</strong>に統一してください。（Windows/Macで大文字・小文字の扱いが異なり、表示崩れの原因になります）</p>
+  <p>連番は<strong>2桁のゼロ埋め</strong>（<code>01</code>〜）で統一してください。</p>
+  <pre><span class="label-ng">/* NG */</span>
+2026VitC-LP-1.webp
+
+<span class="label-ok">/* OK */</span>
+2026vitc-lp-01.webp</pre>
+</div>
+
+<div class="rule">
+  <div class="rule-title">フォーマット</div>
+  <p>原則 <strong>WebP</strong> または <strong>SVG</strong> を使用してください。（軽量化にご協力ください）</p>
+  <p><span class="label-ng">NG</span>：<code>jpeg</code> <code>jpg</code> <code>png</code> 形式での納品</p>
+</div>
+
+<hr>
+
+<h2>納品物</h2>
+<ul class="deliverables">
+  <li>HTMLファイル1本にすべて記述（インラインCSS・JS含む）</li>
+  <li><code>img</code> フォルダ（画像一式）</li>
+  <li>文字コード：<strong>UTF-8</strong></li>
+</ul>
+
+</body>
+</html>
