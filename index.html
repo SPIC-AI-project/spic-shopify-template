@@ -37,18 +37,26 @@
     margin-bottom: 12px;
   }
   ul.links a {
-    display: inline-block;
+    display: flex;
+    align-items: center;
     padding: 12px 18px;
-    background: #f4f4f4;
-    border-left: 4px solid #555;
-    color: #222;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-left: 4px solid #2a6df5;
+    border-radius: 4px;
+    color: #2a6df5;
     text-decoration: none;
     font-weight: bold;
     width: 100%;
     box-sizing: border-box;
   }
+  ul.links a::before {
+    content: "→";
+    margin-right: 10px;
+  }
   ul.links a:hover {
-    background: #ececec;
+    background: #eef3ff;
+    border-color: #2a6df5;
   }
   ul.links .desc {
     display: block;
