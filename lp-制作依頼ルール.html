@@ -76,6 +76,34 @@
     color: #888;
     margin: -24px 0 32px;
   }
+  table.spec {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+  table.spec th,
+  table.spec td {
+    border: 1px solid #bbb;
+    padding: 12px 14px;
+    font-size: 15px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.spec th {
+    width: 28%;
+    background: #f4f4f4;
+    font-weight: bold;
+  }
+  table.spec td p {
+    margin: 0;
+  }
+  table.spec td .sub {
+    padding-left: 1.5em;
+  }
+  table.spec td .small {
+    font-size: 14px;
+    margin-top: 6px;
+  }
 </style>
 </head>
 <body>
@@ -109,6 +137,20 @@
 <span class="label-ok">/* OK */</span>
 /pages/vitamin-c-lp</pre>
 <p>ページのURLは1階層のスラッグのみで管理されます。ファイル命名規則で使用する <code>lpname</code> は、このURLスラッグを参考に設定してください。</p>
+
+<hr>
+
+<h2>デザイン・コーディング関連</h2>
+<table class="spec">
+  <tr>
+    <th>ブレークポイント</th>
+    <td>
+      <p>768px</p>
+      <p class="small">※LPのブレークポイントは768pxで設計してください。</p>
+      <p class="small">※弊社サイトのヘッダー・フッターは、640pxと1024pxで表示が切り替わります。LPの切り替わり位置（768px）とは一致しない幅がありますが、LP内のレイアウトが崩れていなければ問題ありません。</p>
+    </td>
+  </tr>
+</table>
 
 <hr>
 
