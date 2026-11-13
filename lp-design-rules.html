@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>外部LP制作 デザインルール</title>
+<style>
+  body {
+    font-family: "Hiragino Sans", "Meiryo", sans-serif;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 24px;
+    color: #333;
+    line-height: 1.8;
+  }
+  h1 {
+    font-size: 22px;
+    border-bottom: 3px solid #333;
+    padding-bottom: 12px;
+    margin-bottom: 40px;
+  }
+  h2 {
+    font-size: 17px;
+    margin-top: 48px;
+    padding: 8px 14px;
+    background: #f4f4f4;
+    border-left: 4px solid #555;
+  }
+  p {
+    font-size: 15px;
+  }
+  .last-updated {
+    font-size: 13px;
+    color: #888;
+    margin: -24px 0 32px;
+  }
+  table.spec {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+  }
+  table.spec th,
+  table.spec td {
+    border: 1px solid #bbb;
+    padding: 12px 14px;
+    font-size: 15px;
+    text-align: left;
+    vertical-align: top;
+  }
+  table.spec th {
+    width: 28%;
+    background: #f4f4f4;
+    font-weight: bold;
+  }
+  table.spec td p {
+    margin: 0;
+  }
+  table.spec td .small {
+    font-size: 14px;
+    margin-top: 6px;
+  }
+</style>
+</head>
+<body>
+
+<h1>外部LP制作 デザインルール</h1>
+<p class="last-updated">最終更新日：<span id="last-updated-date"></span></p>
+<script>
+  (function () {
+    var d = new Date(document.lastModified);
+    var text = d.getFullYear() + '年' + (d.getMonth() + 1) + '月' + d.getDate() + '日';
+    document.getElementById('last-updated-date').textContent = text;
+  })();
+</script>
+
+<h2>デザイン・コーディング関連</h2>
+<table class="spec">
+  <tr>
+    <th>横幅</th>
+    <td>
+      <p>LPの特性上、背景などは自由にご制作いただいて構いません。</p>
+      <p>ただし、文字・画像の配置幅は、弊社サイトの共通幅に合わせて目安をお守りください。</p>
+      <p class="small">PC：1024px以内（左右余白を含め1120px）</p>
+      <p class="small">SP：375px</p>
+    </td>
+  </tr>
+  <tr>
+    <th>縦幅</th>
+    <td>コンテンツ量に応じた成り行き</td>
+  </tr>
+  <tr>
+    <th>ブレークポイント</th>
+    <td>
+      <p>768px</p>
+      <p class="small">※LPのブレークポイントは768pxで設計してください。</p>
+      <p class="small">※弊社サイトのヘッダー・フッターは、640pxと1024pxで表示が切り替わります。LPの切り替わり位置（768px）とは一致しない幅がありますが、LP内のレイアウトが崩れていなければ問題ありません。</p>
+    </td>
+  </tr>
+</table>
+
+</body>
+</html>
